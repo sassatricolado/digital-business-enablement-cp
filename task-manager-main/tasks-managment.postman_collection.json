@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "d0d9e49a-2587-46de-8e3d-ed9a8a887027",
+		"name": "tasks-managment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24275954"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"contatos.samuel@outlook.com\",\n    \"password\": \"mamae123\",\n    \"roles\": \"USER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/signup",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"contatos.samuel@outlook.com\",\n    \"password\": \"mamae123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/signin",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndWkuY2F2YWxjYW50ZTE5OTlAb3V0bG9vay5jb20uYnIiLCJpYXQiOjE2OTkyMjgxNDYsImV4cCI6MTY5OTMxNDU0Nn0.1LOgLScA29szg2Fe7AWBlENCjza_05w2YbBdF_Mx2Jw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Nome da task\",\n  \"description\": \"Descrição da Task\",\n  \"dueDate\": \"2023-11-05T10:30:00\" \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/task",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndWkuY2F2YWxjYW50ZTE5OTlAb3V0bG9vay5jb20uYnIiLCJpYXQiOjE2OTkyMjQzNDgsImV4cCI6MTY5OTMxMDc0OH0.ygEkI-Z21DH_qR9EAOzaLILeAA9BmoZxbCotaN2yoC8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/task",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndWkuY2F2YWxjYW50ZTE5OTlAb3V0bG9vay5jb20uYnIiLCJpYXQiOjE2OTkyMjQzNDgsImV4cCI6MTY5OTMxMDc0OH0.ygEkI-Z21DH_qR9EAOzaLILeAA9BmoZxbCotaN2yoC8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"title\": \"Alterando o título da task\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/task",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndWkuY2F2YWxjYW50ZTE5OTlAb3V0bG9vay5jb20uYnIiLCJpYXQiOjE2OTkyMjQzNDgsImV4cCI6MTY5OTMxMDc0OH0.ygEkI-Z21DH_qR9EAOzaLILeAA9BmoZxbCotaN2yoC8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/task/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"task",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:9090"
+		}
+	]
+}
